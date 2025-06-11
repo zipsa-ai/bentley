@@ -2,6 +2,7 @@ import os
 import subprocess
 import tempfile
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 GITHUB_TOKEN = os.environ["GIT_TOKEN"]
 GITHUB_USERNAME = os.environ.get("GITHUB_USERNAME", "zipsa-ai")  # 기본값 제공
@@ -21,7 +22,8 @@ def run(cmd, cwd=None):
     subprocess.run(cmd, shell=True, check=True, cwd=cwd)
 
 def commit_to_another_repo(markdown_content):
-    today = datetime.now().strftime("%Y-%m-%d-%H%M")
+    kst = ZoneInfo("Asia/Seoul")
+    today = datetime.now(tz=kst).strftime("%Y-%m-%d-%H%M")
     filename = f"{today}.md"
 
     with tempfile.TemporaryDirectory() as tmpdir:
