@@ -1,9 +1,8 @@
 name: Run Bentley Script
 
 on:
-  push:
-    branches:
-      - main  # 또는 원하는 브랜치명
+  schedule:
+    - cron: '0 0 * * *'  # UTC 기준: 오전 9시 KST에 실행됨 (UTC+9)
   workflow_dispatch:  # 수동 실행도 가능
 
 jobs:
