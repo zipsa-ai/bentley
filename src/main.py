@@ -7,6 +7,8 @@ import time
 from groq import Groq
 from datetime import datetime, timezone, timedelta
 
+from git_push import commit_to_another_repo
+
 def get_naver_land_news_text():
     # Headless 브라우저 옵션
     options = Options()
@@ -93,3 +95,4 @@ if __name__ == "__main__":
     print("-" * 200)
     print(result)
 
+    commit_to_another_repo(result)
