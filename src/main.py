@@ -85,7 +85,7 @@ theme: light
 if __name__ == "__main__":
     news_list = get_naver_land_news_text()
     content = "\n\n".join(news_list)
-    summary = ask("내용 중 서울 지역 부동산 관련 뉴스만 추출, 제목에 강조를 넣지 말자, markdown 형식", content + "\n\n위 내용중 서울 지역 아파트 가격과 분양 뉴스만 선별해서 요약하고 전문가로서 의견도 추가해줘")
+    summary = ask("서울 지역 부동산 또는 아파트, markdown 형식으로 작성, No bold", content + "\n\n위 내용 주 주요 뉴스 10개 이내로 요약 정리하고, 부동산 전문가로서의 의견도 추가해줘")
     img = ask("url 주소에서 type=nf142_103는 제외하고 추출", content + "가장 인기 있는 글의 image url 하나만 추출")
     title = ask("title 은 plain text", summary + "위 내용을 기반으로 MrBeast 스타일의 뉴스 제목을 자극적이고 검색이 잘 될거 같은 제목 1개만 작성")
     result = write_blog(title, img, summary)
