@@ -6,7 +6,7 @@ on:
       - main  # 또는 'master', 'dev' 등 원하는 브랜치
   schedule:
     - cron: '0 0 * * *'  # UTC 기준: 오전 9시 KST에 실행됨 (UTC+9)
-    - cron: '0 4 * * *'  # UTC 기준: 오후  1시 KST에 실행됨 (UTC+9)
+    - cron: '0 2 * * *'  # UTC 기준: 오후  1시 KST에 실행됨 (UTC+9)
     - cron: '0 8 * * *'  # UTC 기준: 오후  5시 KST에 실행됨 (UTC+9)
   workflow_dispatch:  # 수동 실행도 가능
 
