@@ -95,6 +95,11 @@ if __name__ == "__main__":
     print("-" * 200)
     print(result)
 
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    kst = ZoneInfo("Asia/Seoul")
+    today = datetime.now(tz=kst).strftime("%Y-%m-%d-%H")
+
     commit_to_another_repo(result, username="zipsa-ai", repo_name="zipsa-ai.github.io", posts_path="content/posts")
-    commit_to_another_repo(result, username="zipsa-ai", repo_name="youtube-data", posts_path="")
+    commit_to_another_repo(result, username="zipsa-ai", repo_name="youtube-data", posts_path=f"{today}")
     
