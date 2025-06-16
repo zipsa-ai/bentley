@@ -95,4 +95,4 @@ if __name__ == "__main__":
     print("-" * 200)
     print(result)
 
-    commit_to_another_repo(result)
+    commit_to_another_repo(result, username="zipsa-ai", repo_name="zipsa-ai.github.io", posts_path="content/posts")
