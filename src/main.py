@@ -96,3 +96,5 @@ if __name__ == "__main__":
     print(result)
 
     commit_to_another_repo(result, username="zipsa-ai", repo_name="zipsa-ai.github.io", posts_path="content/posts")
+    commit_to_another_repo(result, username="zipsa-ai", repo_name="youtube-data", posts_path="")
+    
