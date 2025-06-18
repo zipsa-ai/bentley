@@ -17,6 +17,10 @@ jobs:
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+      BLOGGER_TOKEN_PICKLE_B64: ${{ secrets.BLOGGER_TOKEN_PICKLE_B64 }}
 
     steps:
       - name: Checkout repository

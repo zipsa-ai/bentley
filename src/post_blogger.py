@@ -8,6 +8,7 @@ import html
 import os
 import json
 import base64
+import logging
 
 SCOPES = ['https://www.googleapis.com/auth/blogger']
 
@@ -82,10 +83,11 @@ def post_to_blogger(title, content, blog_id):
             body=post
         ).execute()
         
+        logging.info(f"Post created successfully! Post ID: {response['id']}, URL: {response['url']}")
         return response
     
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
+        logging.error(f"An error occurred while posting to Blogger: {str(e)}")
         return None
 
 def main():
@@ -103,4 +105,5 @@ def main():
         print(f"Post URL: {result['url']}")
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
     main() 
