@@ -88,6 +88,7 @@ if __name__ == "__main__":
     summary = ask("only 서울 지역 아파트 정보, markdown 형식으로 작성, No bold", content + "\n\n서울 아파트 관련 뉴스 10개 내외로 선정, 부동산 전문가로서의 의견도 추가해줘")
     img = ask("url 주소에서 type=nf142_103는 제외하고 추출", content + "random으로 글의 image url 하나만 추출")
     title = ask("title 은 plain text", summary + "위 내용을 기반으로 MrBeast 스타일의 뉴스 제목을 자극적이고 검색이 잘 될거 같은 제목 1개만 작성")
+    title = title.replace("**", "")  # Remove any ** characters from title
     result = write_blog(title, img, summary)
     print("#" * 50)
     print("title: ", title)
