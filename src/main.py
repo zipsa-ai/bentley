@@ -104,7 +104,8 @@ def main():
         # Write to blogger
         summary += """
 ## Reference
-https://sunshout.tistory.com"""
+
+[더 많은 뉴스로 이동](https://sunshout.tistory.com"""
         blog_id = 30091571
         post_to_blogger(title, summary, blog_id)
         blog_id = 1381865439607080595
