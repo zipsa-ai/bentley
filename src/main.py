@@ -102,7 +102,7 @@ def main():
  
     try:
         # Write to blogger
-        summary += "## Reference: https://sunshout.tistory.com"
+        summary += "## Reference\nhttps://sunshout.tistory.com"
         blog_id = 30091571
         post_to_blogger(title, summary, blog_id)
         blog_id = 1381865439607080595

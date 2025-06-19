@@ -9,6 +9,7 @@ import os
 import json
 import base64
 import logging
+import markdown
 
 SCOPES = ['https://www.googleapis.com/auth/blogger']
 
@@ -65,9 +66,8 @@ def post_to_blogger(title, content, blog_id):
         creds = get_blogger_credentials()
         service = build('blogger', 'v3', credentials=creds)
         
-        # Convert markdown content to HTML (you might want to use a markdown library here)
-        # For now, we'll just escape HTML and use line breaks
-        html_content = html.escape(content).replace('\n', '<br>')
+        # Convert markdown to HTML
+        html_content = markdown.markdown(content)
         
         post = {
             'kind': 'blogger#post',
