@@ -102,11 +102,14 @@ def main():
  
     try:
         # Write to blogger
-        blog_id = os.getenv('BLOGGER_BLOG_ID')
+        summary += "## Reference: https://sunshout.tistory.com"
+        blog_id = 30091571
+        post_to_blogger(title, summary, blog_id)
+        blog_id = 1381865439607080595
         post_to_blogger(title, summary, blog_id)
     except Exception as e:
-        return
-        
+        print(e)
+
 if __name__ == "__main__":
     
     main()
