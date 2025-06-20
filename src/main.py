@@ -14,6 +14,7 @@ import re
 from git_push import commit_to_another_repo
 from post_blogger import post_to_blogger
 from browser import screenshot_url
+from browser import open_browser
 from browser import get_naver_news_content
 
 
@@ -145,7 +146,7 @@ def blogspot():
     title = ask("title 은 plain text", summary + "위 내용을 기반으로 MrBeast 스타일의 뉴스 제목을 자극적이고 검색이 잘 될거 같은 제목 1개만 작성")
     title = title.replace("**", "")  # Remove any ** characters from title
  
-    pickme = ask("json 스타일로,  title, url, image", content + "\n\n서울 아파트 관련하여 가장 인기 있을 같은 뉴스 하나만 선택")
+    pickme = ask("output as json, field=title, url, image", content + "\n\n서울 아파트 관련하여 가장 인기 있을 같은 뉴스 하나만 선택")
     pickme_json = extract_json_from_markdown(pickme)
     print(pickme_json)
     title = pickme_json.get("title")
@@ -173,9 +174,8 @@ def blogspot():
 
 
 def test():
-    url = "https://sunshout.tistory.com/2015"
-    output_path = "./test.png"
-    screenshot_url(url, output_path)
+    url = "https://www.nongmin.com/article/20250618500107"
+    screenshot_url(url, "./test.png")
 
 
 if __name__ == "__main__":
