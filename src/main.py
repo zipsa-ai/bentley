@@ -157,27 +157,35 @@ def blogspot():
         content = ask("나는 세상에서 가장 인기있는 블로그", f"{content}\n\n 위 내용을 기반으로 관련 그림을 추가하고, 글을 작성")
         content = f"""
 ![관련그림]({image})
+
 {content}
 
 ## Reference
 
-[더 많은 뉴스로 이동](https://sunshout.tistory.com)"""
+[더 많은 뉴스로 이동](https://sunshout.tistory.com)
+[서울 집사 이동](https://spaceone.ai)
+"""
         blog_id = 30091571
         post_to_blogger(title, content, blog_id)
         blog_id = 1381865439607080595
         post_to_blogger(title, content, blog_id)
 
 
-
+def test():
+    url = "https://sunshout.tistory.com/#google_vignette"
+    output_path = "./test.png"
+    screenshot_url(url, output_path)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("func", help="Function to run", default="all", choices=["all", "blogspot"])
+    parser.add_argument("func", help="Function to run", default="all", choices=["all", "blogspot", "test"])
     args = parser.parse_args()
 
     if args.func == "all":
         main()
     elif args.func == "blogspot":
-        blogspot()    
-
+        blogspot()
+    elif args.func == "test":
+        test()
+        
