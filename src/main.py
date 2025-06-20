@@ -166,8 +166,7 @@ def blogspot():
         post_to_blogger(title, content, blog_id)
         blog_id = 1381865439607080595
         post_to_blogger(title, content, blog_id)
-    except Exception as e:
-        print(e)
+
 
 
 
