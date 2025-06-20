@@ -163,6 +163,7 @@ def blogspot():
 ## Reference
 
 [더 많은 뉴스로 이동](https://sunshout.tistory.com)
+
 [서울 집사 이동](https://spaceone.ai)
 """
         blog_id = 30091571
@@ -172,7 +173,7 @@ def blogspot():
 
 
 def test():
-    url = "https://sunshout.tistory.com/#google_vignette"
+    url = "https://sunshout.tistory.com/2015"
     output_path = "./test.png"
     screenshot_url(url, output_path)
 
