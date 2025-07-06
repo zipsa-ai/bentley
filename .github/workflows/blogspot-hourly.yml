@@ -2,7 +2,7 @@ name: Blogspot Hourly Post
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 매시간 정각에 실행
+    - cron: '50 */4 * * *'  # 매 4시간 정각에 실행
   workflow_dispatch:
 
 jobs:
